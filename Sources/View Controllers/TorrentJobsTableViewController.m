@@ -130,7 +130,7 @@ enum ORDER { COMPLETED = 1,
 
 - (void)initialiseHeader {
     self.header = [UILabel.alloc initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, [self sizeForDevice])];
-    self.header.backgroundColor = [UIColor colorWithRed:0 green:.9 blue:.4 alpha:1];
+    self.header.backgroundColor = [UIColor systemGreenColor];
     self.header.textColor = [UIColor whiteColor];
     self.header.text = @"Attempting Connection";
     self.header.font = [UIFont fontWithName:@"Arial" size:self.sizeForDevice - 6];
@@ -153,10 +153,10 @@ enum ORDER { COMPLETED = 1,
 
 - (void)receiveUpdateHeaderNotification {
     if ([TorrentDelegate.sharedInstance.currentlySelectedClient isHostOnline]) {
-        self.header.backgroundColor = [UIColor colorWithRed:.302 green:.584 blue:.772 alpha:.85];
+        self.header.backgroundColor = [UIColor systemBlueColor];
         self.header.text = @"Host Online";
     } else {
-        self.header.backgroundColor = [UIColor colorWithRed:.98 green:.196 blue:.196 alpha:.85];
+        self.header.backgroundColor = [UIColor systemRedColor];
         self.header.text = @"Host Offline";
     }
 }
@@ -425,14 +425,6 @@ enum ORDER { COMPLETED = 1,
     frame.size.width = cell.frame.size.width * (completeValue ? [currentJob[@"progress"] doubleValue] / completeValue : 0);
     progressView.frame = frame;
 
-    if ([currentJob[@"status"] isEqualToString:@"Seeding"]) {
-        progressView.backgroundColor = [UIColor colorWithRed:0 green:1 blue:.4 alpha:.3];
-    } else if ([currentJob[@"status"] isEqualToString:@"Downloading"]) {
-        progressView.backgroundColor = [UIColor colorWithRed:0 green:.478 blue:1 alpha:.3];
-    } else {
-        progressView.backgroundColor = [UIColor colorWithRed:.85 green:.85 blue:.85 alpha:.5];
-    }
-
     [progressView setNeedsDisplay];
 }
 
@@ -474,12 +466,12 @@ enum ORDER { COMPLETED = 1,
         resumeOrPauseAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Resume" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [TorrentDelegate.sharedInstance.currentlySelectedClient resumeTorrent:currentJob[@"hash"]];
         }];
-        resumeOrPauseAction.backgroundColor = [UIColor colorWithRed:0 green:.9 blue:.4 alpha:1];
+        resumeOrPauseAction.backgroundColor = [UIColor systemGreenColor];
     } else {
         resumeOrPauseAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Pause" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [TorrentDelegate.sharedInstance.currentlySelectedClient pauseTorrent:currentJob[@"hash"]];
         }];
-        resumeOrPauseAction.backgroundColor = [UIColor lightGrayColor];
+        resumeOrPauseAction.backgroundColor = [UIColor systemGray3Color];
     }
     
     return @[resumeOrPauseAction, deleteAction];
@@ -516,11 +508,11 @@ enum ORDER { COMPLETED = 1,
     cell.downloadSpeed.text = [NSString stringWithFormat:@"%@ ↓", currentJob[@"downloadSpeed"]];
 
     if ([currentJob[@"status"] isEqualToString:@"Seeding"]) {
-        cell.percentBar.progressTintColor = [UIColor colorWithRed:0 green:.9 blue:.4 alpha:1];
+        cell.percentBar.progressTintColor = [UIColor systemGreenColor];
     } else if ([currentJob[@"status"] isEqualToString:@"Downloading"]) {
-        cell.percentBar.progressTintColor = [UIColor colorWithRed:0 green:.478 blue:1 alpha:1];
+        cell.percentBar.progressTintColor = [UIColor systemBlueColor];
     } else {
-        cell.percentBar.progressTintColor = [UIColor darkGrayColor];
+        cell.percentBar.progressTintColor = [UIColor systemGrayColor];
     }
 
     cell.uploadSpeed.text = [NSString stringWithFormat:@"↑ %@", currentJob[@"uploadSpeed"]];
