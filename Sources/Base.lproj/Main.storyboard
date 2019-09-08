@@ -96,31 +96,31 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem image="info.png" style="plain" id="UVi-Be-r1b">
+                        <barButtonItem image="info.circle" catalog="system" style="plain" id="UVi-Be-r1b">
                             <connections>
                                 <segue destination="JB5-h0-cqy" kind="show" id="0KE-GC-Uam"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="30U-AO-9BB"/>
-                        <barButtonItem image="Safari.png" id="XiS-V5-NRC">
+                        <barButtonItem image="safari" catalog="system" id="XiS-V5-NRC">
                             <connections>
                                 <action selector="openUI:" destination="zWV-0Y-d6N" id="nXS-YR-ZJc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="TaI-5p-LlI"/>
-                        <barButtonItem image="Sorting.png" style="plain" id="9ce-9Q-yfE">
+                        <barButtonItem image="slider.horizontal.3" catalog="system" style="plain" id="9ce-9Q-yfE">
                             <connections>
                                 <action selector="sortAndOrder:" destination="zWV-0Y-d6N" id="Bqp-S4-5fE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="azT-uy-7RU"/>
-                        <barButtonItem image="Signal.png" style="plain" id="jmv-DX-kWA">
+                        <barButtonItem image="playpause" catalog="system" style="plain" id="jmv-DX-kWA">
                             <connections>
                                 <action selector="showListOfControlOptions:" destination="zWV-0Y-d6N" id="kuQ-9w-uXb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="HE0-CB-Ie6"/>
-                        <barButtonItem image="gear.png" style="plain" id="OVA-yF-iMx">
+                        <barButtonItem image="gear" catalog="system" style="plain" id="OVA-yF-iMx">
                             <connections>
                                 <segue destination="UrW-6h-1as" kind="show" identifier="Settings" id="bMs-wG-GIZ"/>
                             </connections>
@@ -196,13 +196,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem image="UIButtonBarPlay.png" style="plain" id="CPX-yq-5zR">
+                        <barButtonItem image="play.fill" catalog="system" style="plain" id="CPX-yq-5zR">
                             <connections>
                                 <action selector="playPause:" destination="aQm-fc-cHO" id="VHx-Dx-COQ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ohd-WO-nQd"/>
-                        <barButtonItem image="UIButtonBarStop.png" style="plain" id="Ecx-lu-pGc">
+                        <barButtonItem image="trash" catalog="system" style="plain" id="Ecx-lu-pGc">
                             <connections>
                                 <action selector="deleteTorrent:" destination="aQm-fc-cHO" id="aGu-6e-Tkw"/>
                             </connections>
@@ -280,32 +280,8 @@
                             </tableViewSection>
                             <tableViewSection id="qAh-AY-ZiJ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="2M1-3S-NS5" detailTextLabel="wbs-d9-qju" style="IBUITableViewCellStyleSubtitle" id="dO5-2G-61F">
-                                        <rect key="frame" x="0.0" y="118" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dO5-2G-61F" id="qBz-he-Hc3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Icons courtesy of VisualPharm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2M1-3S-NS5">
-                                                    <rect key="frame" x="16.000000000000014" y="4" width="245.33333333333334" height="21.666666666666668"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="www.visualpharm.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wbs-d9-qju">
-                                                    <rect key="frame" x="16" y="25.666666666666668" width="126" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="5eb-og-P2j" detailTextLabel="zgk-1h-OAP" style="IBUITableViewCellStyleSubtitle" id="RgW-U6-Rnn">
-                                        <rect key="frame" x="0.0" y="162" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="118" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RgW-U6-Rnn" id="lVr-Ja-4l2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -329,7 +305,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="N1h-B5-zUj" detailTextLabel="gZl-9w-9j7" style="IBUITableViewCellStyleSubtitle" id="74e-8r-GWS">
-                                        <rect key="frame" x="0.0" y="206" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="162" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="74e-8r-GWS" id="mgI-wi-HHi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1366,13 +1342,13 @@ e.g. "http://www.google.com/q=%query%"</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Safari.png" width="30" height="30"/>
-        <image name="Signal.png" width="30" height="30"/>
-        <image name="Sorting.png" width="30" height="30"/>
-        <image name="UIButtonBarPlay.png" width="15.5" height="18.5"/>
-        <image name="UIButtonBarStop.png" width="17.5" height="17.5"/>
-        <image name="gear.png" width="30" height="30"/>
-        <image name="info.png" width="30" height="30"/>
+        <image name="gear" catalog="system" width="64" height="60"/>
+        <image name="info.circle" catalog="system" width="64" height="62"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="playpause" catalog="system" width="64" height="42"/>
+        <image name="safari" catalog="system" width="64" height="62"/>
+        <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XYV-ub-VqM"/>

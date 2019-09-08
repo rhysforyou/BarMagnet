@@ -16,22 +16,12 @@
 		232AE1911891EE7400D3F018 /* AddQueryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232AE1901891EE7400D3F018 /* AddQueryTableViewController.m */; };
 		232AE194189206C000D3F018 /* UITextField+UniqueString.m in Sources */ = {isa = PBXBuildFile; fileRef = 232AE193189206C000D3F018 /* UITextField+UniqueString.m */; };
 		232B0FA5178C356700A7B3DC /* TorrentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232B0FA4178C356700A7B3DC /* TorrentDetailViewController.m */; };
-		23314152177FE95E0062B0FE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 23314150177FE95E0062B0FE /* gear.png */; };
-		23314153177FE95E0062B0FE /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23314151177FE95E0062B0FE /* gear@2x.png */; };
 		2346A5A418A8C2F0005EE9C0 /* AdBlocker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2346A5A318A8C2F0005EE9C0 /* AdBlocker.plist */; };
 		2351200A1769C49000A3DE2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235120071769C49000A3DE2C /* Main.storyboard */; };
-		235527571871718300A9E6BC /* UIButtonBarPause.png in Resources */ = {isa = PBXBuildFile; fileRef = 235527531871718300A9E6BC /* UIButtonBarPause.png */; };
-		235527581871718300A9E6BC /* UIButtonBarPause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 235527541871718300A9E6BC /* UIButtonBarPause@2x.png */; };
-		235527591871718300A9E6BC /* UIButtonBarPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 235527551871718300A9E6BC /* UIButtonBarPlay.png */; };
-		2355275A1871718300A9E6BC /* UIButtonBarPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 235527561871718300A9E6BC /* UIButtonBarPlay@2x.png */; };
-		2355275D18722A8600A9E6BC /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2355275B18722A8600A9E6BC /* info.png */; };
-		2355275E18722A8600A9E6BC /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2355275C18722A8600A9E6BC /* info@2x.png */; };
 		235527641872568D00A9E6BC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235527631872568D00A9E6BC /* AboutViewController.m */; };
 		235527661872723700A9E6BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235527651872723700A9E6BC /* Images.xcassets */; };
 		2363424218C485A700F66225 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2363424118C485A700F66225 /* LICENSE.txt */; };
 		2374DD9E1796F23100F613EB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2374DD9D1796F23100F613EB /* MessageUI.framework */; };
-		237570B11877B742008217BF /* UIButtonBarStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 237570AF1877B742008217BF /* UIButtonBarStop.png */; };
-		237570B21877B742008217BF /* UIButtonBarStop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237570B01877B742008217BF /* UIButtonBarStop@2x.png */; };
 		2379763F19654AF500279520 /* ruTorrentHTTPRPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2379763E19654AF500279520 /* ruTorrentHTTPRPC.m */; };
 		2396C92B1895EA88009BC6D3 /* UIFastProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2396C92A1895EA88009BC6D3 /* UIFastProgressBar.m */; };
 		23A868F218BF36F70066E383 /* libNSBencodeSerialization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A868EF18BF36DB0066E383 /* libNSBencodeSerialization.a */; };
@@ -85,20 +75,14 @@
 		9E4357E71F75BA2D00D05DF0 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E7231531F73441400023517 /* TSMessagesDefaultDesign.json */; };
 		9E46C83A1F68C9B600EA2DED /* TorrentDownloaderModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E46C8351F68C8CB00EA2DED /* TorrentDownloaderModalWebViewController.m */; };
 		9E46C83B1F68C9BE00EA2DED /* TorrentDownloaderWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E46C8341F68C8CB00EA2DED /* TorrentDownloaderWebViewController.m */; };
-		9E598AE61F8742EB0078216A /* Sorting.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E598AE41F8742EB0078216A /* Sorting.png */; };
-		9E598AE71F8742EB0078216A /* Sorting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E598AE51F8742EB0078216A /* Sorting@2x.png */; };
 		9E7231C61F73449300023517 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E72317D1F73441400023517 /* HexColors.m */; };
 		9E7231C71F73449B00023517 /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7231571F73441400023517 /* TSBlurView.m */; };
 		9E7231C81F73449B00023517 /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7231591F73441400023517 /* TSMessage.m */; };
 		9E7231C91F73449B00023517 /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E72315B1F73441400023517 /* TSMessageView.m */; };
 		9EA17DB61F836A550032B9EA /* TransferTotal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA17DB51F836A550032B9EA /* TransferTotal.xib */; };
 		9EA311881BB6515400A91454 /* Xirvik_rTorrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA311871BB6515400A91454 /* Xirvik_rTorrent.m */; };
-		9EA8DB161F87390300B852A6 /* Signal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA8DB141F87390100B852A6 /* Signal.png */; };
-		9EA8DB171F87390300B852A6 /* Signal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA8DB151F87390200B852A6 /* Signal@2x.png */; };
 		9EC45B651FAD5AA900B966C6 /* Xirvik_Deluge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC45B641FAD5AA900B966C6 /* Xirvik_Deluge.m */; };
 		9EC45B681FAD857200B966C6 /* XirvikQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC45B671FAD857200B966C6 /* XirvikQRCodeViewController.m */; };
-		9EC8645A1F83589A00E87E7E /* Safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC864581F83589900E87E7E /* Safari@2x.png */; };
-		9EC8645B1F83589A00E87E7E /* Safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC864591F83589A00E87E7E /* Safari.png */; };
 		9EEBC0D61F8374C400881126 /* TransferTotal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEBC0D51F8374C400881126 /* TransferTotal.m */; };
 /* End PBXBuildFile section */
 
@@ -152,24 +136,14 @@
 		232AE192189206C000D3F018 /* UITextField+UniqueString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+UniqueString.h"; sourceTree = "<group>"; };
 		232AE193189206C000D3F018 /* UITextField+UniqueString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+UniqueString.m"; sourceTree = "<group>"; };
 		232B0FA3178C356700A7B3DC /* TorrentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorrentDetailViewController.h; sourceTree = "<group>"; };
-		232B0FA4178C356700A7B3DC /* TorrentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TorrentDetailViewController.m; sourceTree = "<group>"; };
-		23314150177FE95E0062B0FE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
-		23314151177FE95E0062B0FE /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		232B0FA4178C356700A7B3DC /* TorrentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = TorrentDetailViewController.m; sourceTree = "<group>"; tabWidth = 2; };
 		2346A5A318A8C2F0005EE9C0 /* AdBlocker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AdBlocker.plist; sourceTree = "<group>"; };
-		235527531871718300A9E6BC /* UIButtonBarPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarPause.png; sourceTree = "<group>"; };
-		235527541871718300A9E6BC /* UIButtonBarPause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarPause@2x.png"; sourceTree = "<group>"; };
-		235527551871718300A9E6BC /* UIButtonBarPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarPlay.png; sourceTree = "<group>"; };
-		235527561871718300A9E6BC /* UIButtonBarPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarPlay@2x.png"; sourceTree = "<group>"; };
-		2355275B18722A8600A9E6BC /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
-		2355275C18722A8600A9E6BC /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		235527621872568D00A9E6BC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		235527631872568D00A9E6BC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		235527651872723700A9E6BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2363424118C485A700F66225 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		23704DF01880C6380029AB17 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2374DD9D1796F23100F613EB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		237570AF1877B742008217BF /* UIButtonBarStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarStop.png; sourceTree = "<group>"; };
-		237570B01877B742008217BF /* UIButtonBarStop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarStop@2x.png"; sourceTree = "<group>"; };
 		2379763E19654AF500279520 /* ruTorrentHTTPRPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ruTorrentHTTPRPC.m; sourceTree = "<group>"; };
 		2379764019654B0400279520 /* ruTorrentHTTPRPC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ruTorrentHTTPRPC.h; sourceTree = "<group>"; };
 		238A94D317A121B70081EF6D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -274,8 +248,6 @@
 		9E46C8341F68C8CB00EA2DED /* TorrentDownloaderWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TorrentDownloaderWebViewController.m; sourceTree = "<group>"; };
 		9E46C8351F68C8CB00EA2DED /* TorrentDownloaderModalWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TorrentDownloaderModalWebViewController.m; sourceTree = "<group>"; };
 		9E46C8361F68C8CB00EA2DED /* TorrentDownloaderWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TorrentDownloaderWebViewController.h; sourceTree = "<group>"; };
-		9E598AE41F8742EB0078216A /* Sorting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sorting.png; sourceTree = "<group>"; };
-		9E598AE51F8742EB0078216A /* Sorting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sorting@2x.png"; sourceTree = "<group>"; };
 		9E7231421F73441400023517 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		9E7231431F73441400023517 /* NotificationBackgroundError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotificationBackgroundError.png; sourceTree = "<group>"; };
 		9E7231441F73441400023517 /* NotificationBackgroundError@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotificationBackgroundError@2x.png"; sourceTree = "<group>"; };
@@ -306,14 +278,10 @@
 		9EA17DB51F836A550032B9EA /* TransferTotal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferTotal.xib; sourceTree = "<group>"; };
 		9EA311861BB6515400A91454 /* Xirvik_rTorrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xirvik_rTorrent.h; sourceTree = "<group>"; };
 		9EA311871BB6515400A91454 /* Xirvik_rTorrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Xirvik_rTorrent.m; sourceTree = "<group>"; };
-		9EA8DB141F87390100B852A6 /* Signal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signal.png; sourceTree = "<group>"; };
-		9EA8DB151F87390200B852A6 /* Signal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signal@2x.png"; sourceTree = "<group>"; };
 		9EC45B631FAD5AA900B966C6 /* Xirvik_Deluge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xirvik_Deluge.h; sourceTree = "<group>"; };
 		9EC45B641FAD5AA900B966C6 /* Xirvik_Deluge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Xirvik_Deluge.m; sourceTree = "<group>"; };
 		9EC45B661FAD857200B966C6 /* XirvikQRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XirvikQRCodeViewController.h; sourceTree = "<group>"; };
 		9EC45B671FAD857200B966C6 /* XirvikQRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XirvikQRCodeViewController.m; sourceTree = "<group>"; };
-		9EC864581F83589900E87E7E /* Safari@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Safari@2x.png"; sourceTree = "<group>"; };
-		9EC864591F83589A00E87E7E /* Safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Safari.png; sourceTree = "<group>"; };
 		9EEBC0D41F8374C400881126 /* TransferTotal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferTotal.h; sourceTree = "<group>"; };
 		9EEBC0D51F8374C400881126 /* TransferTotal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferTotal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -592,33 +560,9 @@
 			path = Bencode;
 			sourceTree = "<group>";
 		};
-		9E46C8421F68CD7800EA2DED /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				23314150177FE95E0062B0FE /* gear.png */,
-				23314151177FE95E0062B0FE /* gear@2x.png */,
-				2355275B18722A8600A9E6BC /* info.png */,
-				2355275C18722A8600A9E6BC /* info@2x.png */,
-				235527531871718300A9E6BC /* UIButtonBarPause.png */,
-				235527541871718300A9E6BC /* UIButtonBarPause@2x.png */,
-				235527551871718300A9E6BC /* UIButtonBarPlay.png */,
-				235527561871718300A9E6BC /* UIButtonBarPlay@2x.png */,
-				237570AF1877B742008217BF /* UIButtonBarStop.png */,
-				237570B01877B742008217BF /* UIButtonBarStop@2x.png */,
-				9EA8DB141F87390100B852A6 /* Signal.png */,
-				9EA8DB151F87390200B852A6 /* Signal@2x.png */,
-				9EC864591F83589A00E87E7E /* Safari.png */,
-				9EC864581F83589900E87E7E /* Safari@2x.png */,
-				9E598AE41F8742EB0078216A /* Sorting.png */,
-				9E598AE51F8742EB0078216A /* Sorting@2x.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		9E46C8431F68CD9200EA2DED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E46C8421F68CD7800EA2DED /* Images */,
 				23A8690E18BF38BA0066E383 /* StringHandler.h */,
 				23A8690F18BF38BA0066E383 /* StringHandler.m */,
 				23AC2B29175D835600FCFA71 /* BarMagnet-Info.plist */,
@@ -795,35 +739,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E598AE61F8742EB0078216A /* Sorting.png in Resources */,
-				235527581871718300A9E6BC /* UIButtonBarPause@2x.png in Resources */,
 				235527661872723700A9E6BC /* Images.xcassets in Resources */,
 				2346A5A418A8C2F0005EE9C0 /* AdBlocker.plist in Resources */,
 				23F0377E18C153BD00B4D289 /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				23F0378118C153BD00B4D289 /* SVWebViewControllerActivitySafari-iPad.png in Resources */,
 				23AC2B2C175D835600FCFA71 /* InfoPlist.strings in Resources */,
 				23F0379518C163A400B4D289 /* README.md in Resources */,
-				23314153177FE95E0062B0FE /* gear@2x.png in Resources */,
-				9E598AE71F8742EB0078216A /* Sorting@2x.png in Resources */,
 				23F0377D18C153BD00B4D289 /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
 				9EA17DB61F836A550032B9EA /* TransferTotal.xib in Resources */,
-				237570B11877B742008217BF /* UIButtonBarStop.png in Resources */,
-				9EA8DB161F87390300B852A6 /* Signal.png in Resources */,
 				23F0377918C153BD00B4D289 /* SVWebViewController.strings in Resources */,
-				9EC8645A1F83589A00E87E7E /* Safari@2x.png in Resources */,
-				2355275A1871718300A9E6BC /* UIButtonBarPlay@2x.png in Resources */,
-				23314152177FE95E0062B0FE /* gear.png in Resources */,
-				9EA8DB171F87390300B852A6 /* Signal@2x.png in Resources */,
-				235527591871718300A9E6BC /* UIButtonBarPlay.png in Resources */,
 				2351200A1769C49000A3DE2C /* Main.storyboard in Resources */,
-				9EC8645B1F83589A00E87E7E /* Safari.png in Resources */,
 				23F0378418C153BD00B4D289 /* SVWebViewControllerActivitySafari@2x.png in Resources */,
-				2355275D18722A8600A9E6BC /* info.png in Resources */,
-				2355275E18722A8600A9E6BC /* info@2x.png in Resources */,
 				9E4357E71F75BA2D00D05DF0 /* TSMessagesDefaultDesign.json in Resources */,
-				237570B21877B742008217BF /* UIButtonBarStop@2x.png in Resources */,
 				2363424218C485A700F66225 /* LICENSE.txt in Resources */,
-				235527571871718300A9E6BC /* UIButtonBarPause.png in Resources */,
 				23F0378218C153BD00B4D289 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				23F0377B18C153BD00B4D289 /* SVWebViewController.bundle in Resources */,
 				23F0378018C153BD00B4D289 /* SVWebViewControllerActivityChrome@2x.png in Resources */,
@@ -1061,7 +989,7 @@
 					"$(SRCROOT)/NSBencodeSerialization/NSBencodeSerialization",
 				);
 				INFOPLIST_FILE = "Sources/Supporting Files/BarMagnet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Sources",
@@ -1096,7 +1024,7 @@
 					"$(SRCROOT)/NSBencodeSerialization/NSBencodeSerialization",
 				);
 				INFOPLIST_FILE = "Sources/Supporting Files/BarMagnet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Sources",

@@ -53,8 +53,8 @@
     if (self.shouldRefresh) {
         dispatch_async(dispatch_get_main_queue(), ^{
           [self.tableView reloadData];
-          self.playPauseButton.image =
-              [UIImage imageNamed:[NSString stringWithFormat:@"UIButtonBar%@", [hashDict[@"status"] isEqualToString:@"Paused"] ? @"Play" : @"Pause"]];
+          BOOL isPaused = [self->hashDict[@"status"] isEqualToString:@"Paused"];
+          self.playPauseButton.image = [UIImage systemImageNamed:isPaused ? @"play.fill" : @"pause.fill"];
         });
     }
 }
