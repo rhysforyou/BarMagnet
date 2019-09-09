@@ -30,7 +30,8 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-z0-kar" customClass="UIFastProgressBar">
                                             <rect key="frame" x="16" y="30.333333333333329" width="343" height="4"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="4" id="EOQ-kf-i9r"/>
                                             </constraints>
@@ -459,7 +460,7 @@
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="pcO-4V-FKq" customClass="AddQueryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eE7-EE-Jms">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1356,6 +1357,6 @@ e.g. "http://www.google.com/q=%query%"</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XYV-ub-VqM"/>
-        <segue reference="WgM-5F-Elv"/>
+        <segue reference="3s7-lY-OXz"/>
     </inferredMetricsTieBreakers>
 </document>
