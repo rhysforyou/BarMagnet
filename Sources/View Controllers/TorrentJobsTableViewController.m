@@ -69,34 +69,6 @@ enum ORDER { COMPLETED = 1,
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(receiveUpdateTableNotification) name:@"update_torrent_jobs_table" object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(receiveUpdateHeaderNotification) name:@"update_torrent_jobs_header" object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(changedClient) name:@"ChangedClient" object:nil];
-
-    [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
-}
-
-- (nullable UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
-    CGPoint cellPostion = [self.tableView convertPoint:location fromView:self.view];
-    NSIndexPath *path = [self.tableView indexPathForRowAtPoint:cellPostion];
-
-    if (path) {
-        NSDictionary *currentJob = nil;
-
-        if (self.searchController.active)
-            currentJob = self.filteredArray[path.row];
-        else
-            currentJob = self.sortedKeys[path.row];
-
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        TorrentDetailViewController *previewController = [storyboard instantiateViewControllerWithIdentifier:@"detail"];
-        [previewController setHashString:currentJob[@"hash"]];
-        previewingContext.sourceRect = [self.view convertRect:cell.frame fromView:self.tableView];
-        return previewController;
-    }
-    return nil;
-}
-
-- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-    [self showViewController:viewControllerToCommit sender:nil];
 }
 
 - (void)initialiseUploadDownloadLabels {
@@ -130,7 +102,7 @@ enum ORDER { COMPLETED = 1,
 
 - (void)initialiseHeader {
     self.header = [UILabel.alloc initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, [self sizeForDevice])];
-    self.header.backgroundColor = [UIColor colorWithRed:0 green:.9 blue:.4 alpha:1];
+    self.header.backgroundColor = [UIColor systemGreenColor];
     self.header.textColor = [UIColor whiteColor];
     self.header.text = @"Attempting Connection";
     self.header.font = [UIFont fontWithName:@"Arial" size:self.sizeForDevice - 6];
@@ -153,10 +125,10 @@ enum ORDER { COMPLETED = 1,
 
 - (void)receiveUpdateHeaderNotification {
     if ([TorrentDelegate.sharedInstance.currentlySelectedClient isHostOnline]) {
-        self.header.backgroundColor = [UIColor colorWithRed:.302 green:.584 blue:.772 alpha:.85];
+        self.header.backgroundColor = [UIColor systemBlueColor];
         self.header.text = @"Host Online";
     } else {
-        self.header.backgroundColor = [UIColor colorWithRed:.98 green:.196 blue:.196 alpha:.85];
+        self.header.backgroundColor = [UIColor systemRedColor];
         self.header.text = @"Host Offline";
     }
 }
@@ -404,13 +376,6 @@ enum ORDER { COMPLETED = 1,
     });
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSMutableArray *dictValues = [TorrentDelegate.sharedInstance.currentlySelectedClient.getJobsDict.allValues mutableCopy];
-    [self sortArray:dictValues];
-    self.sortedKeys = dictValues;
-    return 1;
-}
-
 - (void)addProgressViewToCell:(TorrentJobCheckerCell *)cell withJob:(NSDictionary *)currentJob {
     NSInteger tag = -(1 << 8);
     if (![[cell viewWithTag:tag].class isEqual:UIView.class]) {
@@ -424,14 +389,6 @@ enum ORDER { COMPLETED = 1,
     double completeValue = [[[TorrentDelegate.sharedInstance.currentlySelectedClient class] completeNumber] doubleValue];
     frame.size.width = cell.frame.size.width * (completeValue ? [currentJob[@"progress"] doubleValue] / completeValue : 0);
     progressView.frame = frame;
-
-    if ([currentJob[@"status"] isEqualToString:@"Seeding"]) {
-        progressView.backgroundColor = [UIColor colorWithRed:0 green:1 blue:.4 alpha:.3];
-    } else if ([currentJob[@"status"] isEqualToString:@"Downloading"]) {
-        progressView.backgroundColor = [UIColor colorWithRed:0 green:.478 blue:1 alpha:.3];
-    } else {
-        progressView.backgroundColor = [UIColor colorWithRed:.85 green:.85 blue:.85 alpha:.5];
-    }
 
     [progressView setNeedsDisplay];
 }
@@ -456,33 +413,36 @@ enum ORDER { COMPLETED = 1,
     [self presentViewController:deleteController animated:YES completion:nil];
 }
 
-- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *currentJob = nil;
+- (CGFloat)sizeForDevice {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? IPHONE_HEIGHT : IPAD_HEIGHT;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:TorrentDetailViewController.class]) {
+        if ([sender isKindOfClass:TorrentJobCheckerCell.class]) {
+            [segue.destinationViewController setHashString:[sender hashString]];
+        } else if ([sender isKindOfClass:NSString.class]) {
+            [segue.destinationViewController setHashString:sender];
+        }
+    }
+}
+
+#pragma mark - Table View Data Source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSMutableArray *dictValues = [TorrentDelegate.sharedInstance.currentlySelectedClient.getJobsDict.allValues mutableCopy];
+    [self sortArray:dictValues];
+    self.sortedKeys = dictValues;
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.searchController.active) {
-        currentJob = self.filteredArray[indexPath.row];
-    } else {
-        currentJob = self.sortedKeys[indexPath.row];
+        return self.filteredArray.count;
     }
-    
-    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        [self showDeletePopupForHash:[currentJob[@"hash"] hash] atIndexPath:indexPath];
-    }];
-    
-    UITableViewRowAction *resumeOrPauseAction;
-    
-    if ([currentJob[@"status"] isEqualToString:@"Paused"]) {
-        resumeOrPauseAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Resume" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            [TorrentDelegate.sharedInstance.currentlySelectedClient resumeTorrent:currentJob[@"hash"]];
-        }];
-        resumeOrPauseAction.backgroundColor = [UIColor colorWithRed:0 green:.9 blue:.4 alpha:1];
-    } else {
-        resumeOrPauseAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Pause" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            [TorrentDelegate.sharedInstance.currentlySelectedClient pauseTorrent:currentJob[@"hash"]];
-        }];
-        resumeOrPauseAction.backgroundColor = [UIColor lightGrayColor];
-    }
-    
-    return @[resumeOrPauseAction, deleteAction];
+    return [[[TorrentDelegate.sharedInstance.currentlySelectedClient getJobsDict] allKeys] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -516,11 +476,11 @@ enum ORDER { COMPLETED = 1,
     cell.downloadSpeed.text = [NSString stringWithFormat:@"%@ ↓", currentJob[@"downloadSpeed"]];
 
     if ([currentJob[@"status"] isEqualToString:@"Seeding"]) {
-        cell.percentBar.progressTintColor = [UIColor colorWithRed:0 green:.9 blue:.4 alpha:1];
+        cell.percentBar.progressTintColor = [UIColor systemGreenColor];
     } else if ([currentJob[@"status"] isEqualToString:@"Downloading"]) {
-        cell.percentBar.progressTintColor = [UIColor colorWithRed:0 green:.478 blue:1 alpha:1];
+        cell.percentBar.progressTintColor = [UIColor systemBlueColor];
     } else {
-        cell.percentBar.progressTintColor = [UIColor darkGrayColor];
+        cell.percentBar.progressTintColor = [UIColor systemGrayColor];
     }
 
     cell.uploadSpeed.text = [NSString stringWithFormat:@"↑ %@", currentJob[@"uploadSpeed"]];
@@ -534,20 +494,22 @@ enum ORDER { COMPLETED = 1,
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.shouldRefresh;
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleNone;
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     self.tableView = tableView;
 }
 
-- (CGFloat)sizeForDevice {
-    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? IPHONE_HEIGHT : IPAD_HEIGHT;
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.shouldRefresh;
+}
+
+#pragma mark - Table View Delegate
+
+- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+    cancelNextRefresh = NO;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    cancelNextRefresh = YES;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -558,25 +520,39 @@ enum ORDER { COMPLETED = 1,
     return self.shouldRefresh ? self.header : nil;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
+}
+
+#pragma mark - Search
+
+- (UIContextMenuConfiguration *)tableView:(UITableView *)tableView contextMenuConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath point:(CGPoint)point {
+    NSDictionary *currentJob = nil;
     if (self.searchController.active) {
-        return self.filteredArray.count;
+        currentJob = self.filteredArray[indexPath.row];
+    } else {
+        currentJob = self.sortedKeys[indexPath.row];
     }
-    return [[[TorrentDelegate.sharedInstance.currentlySelectedClient getJobsDict] allKeys] count];
-}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:TorrentDetailViewController.class]) {
-        if ([sender isKindOfClass:TorrentJobCheckerCell.class]) {
-            [segue.destinationViewController setHashString:[sender hashString]];
-        } else if ([sender isKindOfClass:NSString.class]) {
-            [segue.destinationViewController setHashString:sender];
+    return [UIContextMenuConfiguration configurationWithIdentifier:nil previewProvider:nil actionProvider:^UIMenu * _Nullable(NSArray<UIMenuElement *> * _Nonnull suggestedActions) {
+        UIAction *delete = [UIAction actionWithTitle:@"Delete" image:[UIImage systemImageNamed:@"trash"] identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+            [self showDeletePopupForHash:[currentJob[@"hash"] hash] atIndexPath:indexPath];
+        }];
+
+        UIAction *resumeOrPauseAction;
+        if ([currentJob[@"status"] isEqualToString:@"Paused"]) {
+            resumeOrPauseAction = [UIAction actionWithTitle:@"Resume" image:[UIImage systemImageNamed:@"play"] identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+                [TorrentDelegate.sharedInstance.currentlySelectedClient resumeTorrent:currentJob[@"hash"]];
+            }];
+        } else {
+            resumeOrPauseAction = [UIAction actionWithTitle:@"Pause" image:[UIImage systemImageNamed:@"pause"] identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+                [TorrentDelegate.sharedInstance.currentlySelectedClient pauseTorrent:currentJob[@"hash"]];
+            }];
         }
-    }
-}
 
-- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath {
-    cancelNextRefresh = NO;
+        return [UIMenu menuWithTitle:@"" children:@[delete, resumeOrPauseAction]];
+    }];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
@@ -603,9 +579,7 @@ enum ORDER { COMPLETED = 1,
     [self sortArray:self.filteredArray];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    cancelNextRefresh = YES;
-}
+#pragma mark - Scroll View Delegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     cancelNextRefresh = YES;
